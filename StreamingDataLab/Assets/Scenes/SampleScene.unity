@@ -647,7 +647,6 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
-  m_ShouldActivateOnSelect: 1
 --- !u!114 &393451535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1618,7 +1617,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1151583333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75e79f27f84e47849280b3eab65657e, type: 3}
+  m_Script: {fileID: 11500000, guid: af7861bf2afa546b0b78f77446a64ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1151583335
