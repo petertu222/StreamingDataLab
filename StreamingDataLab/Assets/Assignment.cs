@@ -7,6 +7,9 @@ Pixel RPG characters created by Sean Browning.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text;
+using System.IO;
+
 
 
 #region Assignment Instructions
@@ -49,6 +52,9 @@ public partial class PartyCharacter
 
     public LinkedList<int> equipment;
 
+    public LinkedList<int> afflicition;
+
+    public LinkedList<int> otherThings;
 }
 
 
@@ -72,22 +78,55 @@ public partial class PartyCharacter
 
 static public class AssignmentPart1
 {
+    const int PartyCharacterSaveDataSignifier = 0;
+    const int EquipmentSaveDataSignifier = 1;
+    const int AfflictionSaveDataSignifier = 2;
 
     static public void SavePartyButtonPressed()
     {
+        StreamWriter sw = new StreamWriter(Application.dataPath + Path.DirectorySeparatorChar + "OurBelovedSaveFile.txt");
+
         foreach (PartyCharacter pc in GameContent.partyCharacters)
         {
             Debug.Log("PC class id == " + pc.classID);
+
+            sw.WriteLine(PartyCharacterSaveDataSignifier + "," + pc.classID + "," + pc.health + "," + pc.mana + "," + pc.strength + "," + pc.agility + "," + pc.wisdom);
+
+            foreach(int equipID in pc.equipment)
+            {
+                sw.WriteLine(EquipmentSaveDataSignifier + "," + equipID);
+            }
         }
+
+        sw.Close();
     }
 
     static public void LoadPartyButtonPressed()
     {
 
         //GameContent.partyCharacters.Clear();
+        //string path = Application.dataPath + path.DirectorySeparatorChar + "OurBelovedSaveFile.txt";
+        //GameContent.RefreshUI();
+        //if (File.Exsists(path))
+        //{
+        //    GameContenet.partyCharacter.Clear();
+        //}
 
-        GameContent.RefreshUI();
+        //while ((line = sr.ReadLine()) !=null)
+        //{
+        //    string[] cvs = line.Split(",");
 
+        //    int saveDataSignifier = int.Parse(csv[0]);
+        //    if (saveDataSignifier == PartyCharacterSaveDataSignifier)
+        //    {
+        //        PartyCharacter pc = new PartyCharacter(int.Parse(cvs[1]), int.Parse(cvs[2]), int.Parse(cvs[3]) int.Parse(cvs[4]), int.Parse(cvs[5]), int.Parse(cvs[6]));
+        //        GameContent.partyCharacters.AddLast(pc);
+        //    }
+        //    else if(saveDataSignifier == EquipmentSaveDataSignifier)
+        //    {
+        //        GameContent.partyCharacter
+        //    }
+        //}
     }
 
 }
