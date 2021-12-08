@@ -332,7 +332,7 @@ static public class AssignmentPart2
 
     static public void LoadPartyFromReceivedData(LinkedList<string> data)
     {
-        GameContent.partyCharacter.Clear();
+        GameContent.partyCharacters.Clear();
 
         const int PartyCharacterSaveDataSignifier = 0;
         const int PartyCharacterEquipmentSaveDataSignifier = 1;

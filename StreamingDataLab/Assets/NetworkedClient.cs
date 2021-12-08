@@ -152,5 +152,7 @@ static public class ClientToServerSignifiers
 }
 static public class ServerToClientSignifiers
 {
-
+    public const int PartyDataTransferStart = 101;
+    public const int PartyDataTransfer = 102;
+    public const int PartyDataTransferEnd = 103;
 }
